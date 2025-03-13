@@ -1,4 +1,4 @@
-# React JS Startup and small business website template
+<!-- # React JS Startup and small business website template
 
 [![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=yourname&button_colour=FFDD00&font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/akugbeStephen)
 
@@ -10,7 +10,7 @@
 
 
 
-The Live demo is available [Here](https://mld-prototype.netlify.app)
+The Live demo is available [Here](https://www.scoopydigital.com/)
 
 ## Description
 
@@ -26,4 +26,4 @@ To use this template:
 3. run `npm start` to view the website locally.
 Feel free to edit and make changes. 
 
-You can also Fork the repo and clone to your local machine, make desired changes and enjoy.
+You can also Fork the repo and clone to your local machine, make desired changes and enjoy. -->
