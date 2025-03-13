@@ -498,7 +498,7 @@ const Services = () => {
       <section>
         <div className="m-auto max-w-6xl p-2 md:p-12 h-5/6 font-poppins">
           <div
-            className="flex flex-col-reverse lg:flex-row py-8 justify-between lg:text-left"
+            className="flex flex-col lg:flex-row py-8 justify-between lg:text-left space-y-6 lg:space-y-0"
             data-aos="zoom-out"
           >
             {/* Digital Marketing Strategy Section */}
@@ -557,6 +557,7 @@ const Services = () => {
           </div>
         </div>
       </section>
+
     </div>
   );
 };
