@@ -17,6 +17,7 @@ import { useDocTitle } from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
 import { SelectedServiceProvider } from './components/SelecedServiceProvider';
 import Payservices from './components/Payservices';
+import Services from './components/Services';
 
 function App() {
   useEffect(() => {
@@ -43,7 +44,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/payservices" element={<Payservices />} />
-           
+            <Route path="/services" element={<Services />} />
             <Route path="/get-demo" element={<DemoProduct />} />
           </Routes>
         </ScrollToTop>

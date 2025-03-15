@@ -9,8 +9,35 @@ const Services = () => {
   const { selectedService } = useSelectedService(); // Get the selectedService from context
 
   let serviceContent = null;
-
-  if (selectedService === "Digital marketing") {
+  if (!selectedService) {
+    serviceContent = (
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="bg-white shadow-lg p-5 rounded-lg text-center">
+          <h2 className="text-xl font-bold">Digital Marketing</h2>
+          <p>
+            We provide top-notch digital marketing strategies to grow your
+            business.
+          </p>
+        </div>
+        <div className="bg-white shadow-lg p-5 rounded-lg text-center">
+          <h2 className="text-xl font-bold">SEO</h2>
+          <p>
+            Optimize your website and improve your rankings on search engines.
+          </p>
+        </div>
+        <div className="bg-white shadow-lg p-5 rounded-lg text-center">
+          <h2 className="text-xl font-bold">Content Marketing</h2>
+          <p>
+            Engage your audience with high-quality content and storytelling.
+          </p>
+        </div>
+        <div className="bg-white shadow-lg p-5 rounded-lg text-center">
+          <h2 className="text-xl font-bold">Strategy & Branding</h2>
+          <p>Develop a strong brand identity and market positioning.</p>
+        </div>
+      </div>
+    );
+  } else if (selectedService === "Digital marketing") {
     serviceContent = (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
@@ -303,162 +330,216 @@ const Services = () => {
   } else if (selectedService === "Contentmarketing") {
     serviceContent = (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      {/* Content Creation */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
-        <div className="m-2 text-justify text-sm">
-          <img
-            alt="Content Creation Image"
-            className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
-            src={img} // Replace with an image related to content creation (e.g., writing or video production)
-          />
-          <h2 className="font-semibold my-4 text-xl lg:text-1xl text-center">
-            Content Creation
-          </h2>
-          <p className="text-md font-bold">
-            We produce high-quality content tailored to your brand's voice. Whether it's blogs, videos, or infographics, our content helps engage and educate your audience.
-          </p>
+        {/* Content Creation */}
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
+          <div className="m-2 text-justify text-sm">
+            <img
+              alt="Content Creation Image"
+              className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
+              src={img} // Replace with an image related to content creation (e.g., writing or video production)
+            />
+            <h2 className="font-semibold my-4 text-xl lg:text-1xl text-center">
+              Content Creation
+            </h2>
+            <p className="text-md font-bold">
+              We produce high-quality content tailored to your brand's voice.
+              Whether it's blogs, videos, or infographics, our content helps
+              engage and educate your audience.
+            </p>
+          </div>
+        </div>
+
+        {/* Content Distribution */}
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
+          <div className="m-2 text-justify text-sm">
+            <img
+              alt="Content Distribution"
+              className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
+              src={img2} // Replace with an image related to content distribution (e.g., social media sharing or email marketing)
+            />
+            <h2 className="font-semibold my-4 text-2xl text-center">
+              Content Distribution
+            </h2>
+            <ul className="text-md font-medium list-none p-0">
+              <li className="font-bold">
+                Distribute your content across multiple channels to reach a
+                larger audience.
+              </li>
+              <li className="font-bold">
+                Leverage social media, blogs, newsletters, and more for maximum
+                reach.
+              </li>
+              <li className="font-bold">
+                Ensure your content reaches the right people at the right time
+                for better engagement.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Audience Engagement */}
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
+          <div className="m-2 text-justify text-sm">
+            <img
+              alt="Audience Engagement"
+              className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
+              src={img3} // Replace with an image related to audience engagement (e.g., community interaction or comments)
+            />
+            <h2 className="font-semibold my-4 text-2xl text-center">
+              Audience Engagement
+            </h2>
+            <ul className="text-md font-medium list-none p-0">
+              <li className="font-bold">
+                Boost engagement with compelling calls-to-action and interactive
+                content.
+              </li>
+              <li className="font-bold">
+                Foster meaningful conversations and build brand loyalty.
+              </li>
+              <li className="font-bold">
+                Track analytics to measure audience interaction and adjust
+                strategies.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Content Strategy */}
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
+          <div className="m-2 text-justify text-sm">
+            <img
+              alt="Content Strategy"
+              className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
+              src={img4} // Replace with an image related to content strategy (e.g., planning or mapping out content)
+            />
+            <h2 className="font-semibold my-4 text-2xl text-center">
+              Content Strategy
+            </h2>
+            <ul className="text-md font-medium list-none p-0">
+              <li className="font-bold">
+                Develop a content strategy that aligns with your business
+                objectives and target audience.
+              </li>
+              <li className="font-bold">
+                Create a content calendar to ensure consistent and relevant
+                content delivery.
+              </li>
+              <li className="font-bold">
+                Optimize your content for SEO to increase organic traffic and
+                visibility.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    
-      {/* Content Distribution */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
-        <div className="m-2 text-justify text-sm">
-          <img
-            alt="Content Distribution"
-            className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
-            src={img2} // Replace with an image related to content distribution (e.g., social media sharing or email marketing)
-          />
-          <h2 className="font-semibold my-4 text-2xl text-center">
-            Content Distribution
-          </h2>
-          <ul className="text-md font-medium list-none p-0">
-            <li className="font-bold">Distribute your content across multiple channels to reach a larger audience.</li>
-            <li className="font-bold">Leverage social media, blogs, newsletters, and more for maximum reach.</li>
-            <li className="font-bold">Ensure your content reaches the right people at the right time for better engagement.</li>
-          </ul>
-        </div>
-      </div>
-    
-      {/* Audience Engagement */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
-        <div className="m-2 text-justify text-sm">
-          <img
-            alt="Audience Engagement"
-            className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
-            src={img3} // Replace with an image related to audience engagement (e.g., community interaction or comments)
-          />
-          <h2 className="font-semibold my-4 text-2xl text-center">
-            Audience Engagement
-          </h2>
-          <ul className="text-md font-medium list-none p-0">
-            <li className="font-bold">Boost engagement with compelling calls-to-action and interactive content.</li>
-            <li className="font-bold">Foster meaningful conversations and build brand loyalty.</li>
-            <li className="font-bold">Track analytics to measure audience interaction and adjust strategies.</li>
-          </ul>
-        </div>
-      </div>
-    
-      {/* Content Strategy */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
-        <div className="m-2 text-justify text-sm">
-          <img
-            alt="Content Strategy"
-            className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
-            src={img4} // Replace with an image related to content strategy (e.g., planning or mapping out content)
-          />
-          <h2 className="font-semibold my-4 text-2xl text-center">
-            Content Strategy
-          </h2>
-          <ul className="text-md font-medium list-none p-0">
-            <li className="font-bold">Develop a content strategy that aligns with your business objectives and target audience.</li>
-            <li className="font-bold">Create a content calendar to ensure consistent and relevant content delivery.</li>
-            <li className="font-bold">Optimize your content for SEO to increase organic traffic and visibility.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
     );
   } else if (selectedService === "Strategybanding") {
     serviceContent = (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      {/* Brand Development */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
-        <div className="m-2 text-justify text-sm">
-          <img
-            alt="Brand Development Image"
-            className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
-            src={img} // Replace with an image related to brand development (e.g., logo design, market research)
-          />
-          <h2 className="font-semibold my-4 text-xl lg:text-1xl text-center">
-            Brand Development
-          </h2>
-          <p className="text-md font-bold">
-            We help businesses define their core values, mission, and vision. Our brand development services include everything from logo design to strategic market positioning to create a memorable brand identity.
-          </p>
+        {/* Brand Development */}
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
+          <div className="m-2 text-justify text-sm">
+            <img
+              alt="Brand Development Image"
+              className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
+              src={img} // Replace with an image related to brand development (e.g., logo design, market research)
+            />
+            <h2 className="font-semibold my-4 text-xl lg:text-1xl text-center">
+              Brand Development
+            </h2>
+            <p className="text-md font-bold">
+              We help businesses define their core values, mission, and vision.
+              Our brand development services include everything from logo design
+              to strategic market positioning to create a memorable brand
+              identity.
+            </p>
+          </div>
+        </div>
+
+        {/* Brand Positioning */}
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
+          <div className="m-2 text-justify text-sm">
+            <img
+              alt="Brand Positioning"
+              className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
+              src={img2} // Replace with an image related to brand positioning (e.g., market segmentation, customer analysis)
+            />
+            <h2 className="font-semibold my-4 text-2xl text-center">
+              Brand Positioning
+            </h2>
+            <ul className="text-md font-medium list-none p-0">
+              <li className="font-bold">
+                Position your brand effectively in the market to stand out from
+                the competition.
+              </li>
+              <li className="font-bold">
+                Define your unique selling proposition (USP) to attract your
+                ideal customer base.
+              </li>
+              <li className="font-bold">
+                Ensure your brand communicates value through every touchpoint.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Brand Identity */}
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
+          <div className="m-2 text-justify text-sm">
+            <img
+              alt="Brand Identity"
+              className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
+              src={img3} // Replace with an image related to brand identity (e.g., logos, color schemes, typography)
+            />
+            <h2 className="font-semibold my-4 text-2xl text-center">
+              Brand Identity
+            </h2>
+            <ul className="text-md font-medium list-none p-0">
+              <li className="font-bold">
+                Create a cohesive and recognizable visual identity that
+                resonates with your audience.
+              </li>
+              <li className="font-bold">
+                Develop a consistent tone of voice across all communication
+                channels.
+              </li>
+              <li className="font-bold">
+                Ensure your brand identity reflects your values and mission.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Brand Awareness */}
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
+          <div className="m-2 text-justify text-sm">
+            <img
+              alt="Brand Awareness"
+              className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
+              src={img4} // Replace with an image related to brand awareness (e.g., advertising, social media marketing)
+            />
+            <h2 className="font-semibold my-4 text-2xl text-center">
+              Brand Awareness
+            </h2>
+            <ul className="text-md font-medium list-none p-0">
+              <li className="font-bold">
+                Increase your brand's visibility across digital and traditional
+                channels.
+              </li>
+              <li className="font-bold">
+                Leverage social media, influencer partnerships, and content
+                marketing for greater reach.
+              </li>
+              <li className="font-bold">
+                Measure brand awareness with analytics to refine strategies and
+                drive results.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    
-      {/* Brand Positioning */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
-        <div className="m-2 text-justify text-sm">
-          <img
-            alt="Brand Positioning"
-            className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
-            src={img2} // Replace with an image related to brand positioning (e.g., market segmentation, customer analysis)
-          />
-          <h2 className="font-semibold my-4 text-2xl text-center">
-            Brand Positioning
-          </h2>
-          <ul className="text-md font-medium list-none p-0">
-            <li className="font-bold">Position your brand effectively in the market to stand out from the competition.</li>
-            <li className="font-bold">Define your unique selling proposition (USP) to attract your ideal customer base.</li>
-            <li className="font-bold">Ensure your brand communicates value through every touchpoint.</li>
-          </ul>
-        </div>
-      </div>
-    
-      {/* Brand Identity */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
-        <div className="m-2 text-justify text-sm">
-          <img
-            alt="Brand Identity"
-            className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
-            src={img3} // Replace with an image related to brand identity (e.g., logos, color schemes, typography)
-          />
-          <h2 className="font-semibold my-4 text-2xl text-center">
-            Brand Identity
-          </h2>
-          <ul className="text-md font-medium list-none p-0">
-            <li className="font-bold">Create a cohesive and recognizable visual identity that resonates with your audience.</li>
-            <li className="font-bold">Develop a consistent tone of voice across all communication channels.</li>
-            <li className="font-bold">Ensure your brand identity reflects your values and mission.</li>
-          </ul>
-        </div>
-      </div>
-    
-      {/* Brand Awareness */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
-        <div className="m-2 text-justify text-sm">
-          <img
-            alt="Brand Awareness"
-            className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
-            src={img4} // Replace with an image related to brand awareness (e.g., advertising, social media marketing)
-          />
-          <h2 className="font-semibold my-4 text-2xl text-center">
-            Brand Awareness
-          </h2>
-          <ul className="text-md font-medium list-none p-0">
-            <li className="font-bold">Increase your brand's visibility across digital and traditional channels.</li>
-            <li className="font-bold">Leverage social media, influencer partnerships, and content marketing for greater reach.</li>
-            <li className="font-bold">Measure brand awareness with analytics to refine strategies and drive results.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
     );
-  }else if(selectedService === "Performencemarketing") {
+  } else if (selectedService === "Performencemarketing") {
     serviceContent = (
       <div>
         <h3>Performence Marketing</h3>
@@ -557,7 +638,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

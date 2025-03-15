@@ -1,5 +1,7 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import NavBar from "./Navbar/NavBar";
+import { useEffect } from "react";
 
 const plans = [
   {
@@ -42,6 +44,19 @@ const plans = [
 ];
 
 const Payservices = () => {
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (location.hash === "#services") {
+      navigate("/", { replace: true }); // Navigate to home before scrolling
+      setTimeout(() => {
+        document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  }, [location.hash, navigate]);
+  
+  
   return (
     <>
       <div>
