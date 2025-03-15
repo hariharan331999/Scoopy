@@ -21,7 +21,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-16 ${
+      className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-20 ${
         !top && "bg-white shadow-lg"
       }`}
     >

@@ -1,8 +1,8 @@
 import React from "react";
-import img from "../images/web.svg";
-import img2 from "../images/app.svg";
-import img3 from "../images/hosting.svg";
-import img4 from "../images/consultation.svg";
+import img from "../images/DigitalMarketing1.svg";
+import img2 from "../images/DigitalMarketing2.svg";
+import img3 from "../images/DigitalMarketing3.svg";
+import img4 from "../images/DigitalMarketing4.svg";
 import { useSelectedService } from "./SelecedServiceProvider";
 
 const Services = () => {
@@ -13,7 +13,7 @@ const Services = () => {
   if (selectedService === "Digital marketing") {
     serviceContent = (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+        <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
           <div className="m-2 text-justify text-sm">
             <img
               alt="card img"
@@ -31,8 +31,8 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
-          <div className="m-2 text-justify text-sm">
+        <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
+          <div className="m-2 mt-5 text-justify text-sm">
             <img
               alt="card img"
               className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
@@ -53,7 +53,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+        <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
           <div className="m-2 text-justify text-sm">
             <img
               alt="card img"
@@ -76,7 +76,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+        <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
           <div className="m-2 text-justify text-sm">
             <img
               alt="card img"
@@ -103,7 +103,7 @@ const Services = () => {
   } else if (selectedService === "seo") {
     serviceContent = (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
           <div className="m-2 text-justify text-sm">
             <img
               alt="SEO audit image"
@@ -121,7 +121,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
           <div className="m-2 text-justify text-sm">
             <img
               alt="SEO Content Strategy"
@@ -145,7 +145,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
           <div className="m-2 text-justify text-sm">
             <img
               alt="On-page SEO"
@@ -169,7 +169,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
           <div className="m-2 text-justify text-sm">
             <img
               alt="Link Building"
@@ -200,7 +200,7 @@ const Services = () => {
     serviceContent = (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {/* SEO Consultation */}
-        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
           <div className="m-2 text-justify text-sm">
             <img
               alt="SEO Consultation Image"
@@ -219,7 +219,7 @@ const Services = () => {
         </div>
 
         {/* Strategy Development Consultation */}
-        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
           <div className="m-2 text-justify text-sm">
             <img
               alt="Strategy Development Consultation"
@@ -246,7 +246,7 @@ const Services = () => {
         </div>
 
         {/* Market Research Consultation */}
-        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
           <div className="m-2 text-justify text-sm">
             <img
               alt="Market Research Consultation"
@@ -273,7 +273,7 @@ const Services = () => {
         </div>
 
         {/* Digital Transformation Consultation */}
-        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+        <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
           <div className="m-2 text-justify text-sm">
             <img
               alt="Digital Transformation Consultation"
@@ -304,7 +304,7 @@ const Services = () => {
     serviceContent = (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
       {/* Content Creation */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
         <div className="m-2 text-justify text-sm">
           <img
             alt="Content Creation Image"
@@ -321,7 +321,7 @@ const Services = () => {
       </div>
     
       {/* Content Distribution */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
         <div className="m-2 text-justify text-sm">
           <img
             alt="Content Distribution"
@@ -340,7 +340,7 @@ const Services = () => {
       </div>
     
       {/* Audience Engagement */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
         <div className="m-2 text-justify text-sm">
           <img
             alt="Audience Engagement"
@@ -359,7 +359,7 @@ const Services = () => {
       </div>
     
       {/* Content Strategy */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
         <div className="m-2 text-justify text-sm">
           <img
             alt="Content Strategy"
@@ -383,7 +383,7 @@ const Services = () => {
     serviceContent = (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
       {/* Brand Development */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
         <div className="m-2 text-justify text-sm">
           <img
             alt="Brand Development Image"
@@ -400,7 +400,7 @@ const Services = () => {
       </div>
     
       {/* Brand Positioning */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
         <div className="m-2 text-justify text-sm">
           <img
             alt="Brand Positioning"
@@ -419,7 +419,7 @@ const Services = () => {
       </div>
     
       {/* Brand Identity */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
         <div className="m-2 text-justify text-sm">
           <img
             alt="Brand Identity"
@@ -438,7 +438,7 @@ const Services = () => {
       </div>
     
       {/* Brand Awareness */}
-      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-400 hover:text-grey rounded-lg shadow-2xl p-3 group">
+      <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 hover:bg-yellow-200 hover:text-grey rounded-lg shadow-2xl p-3 group">
         <div className="m-2 text-justify text-sm">
           <img
             alt="Brand Awareness"
@@ -502,7 +502,7 @@ const Services = () => {
             data-aos="zoom-out"
           >
             {/* Digital Marketing Strategy Section */}
-            <div className="lg:w-1/2 flex flex-col lg:mx-4 justify-center bg-yellow-400 p-6 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:rotate-3">
+            <div className="lg:w-1/2 flex flex-col lg:mx-4 justify-center bg-yellow-300 p-6 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:rotate-3">
               <div className="text-white mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -515,7 +515,7 @@ const Services = () => {
                   <path d="M12 7.462c-2.502 0-4.538 2.036-4.538 4.538S9.498 16.538 12 16.538s4.538-2.036 4.538-4.538S14.502 7.462 12 7.462zm0 7.076c-1.399 0-2.538-1.139-2.538-2.538S10.601 9.462 12 9.462s2.538 1.139 2.538 2.538-1.139 2.538-2.538 2.538z"></path>
                 </svg>
               </div>
-              <h3 className="text-2xl text-white font-bold">
+              <h3 className="text-2xl text-black font-bold">
                 SEO & <span className="font-black">Website Optimization</span>
               </h3>
               <div>
@@ -528,7 +528,7 @@ const Services = () => {
             </div>
 
             {/* Social Media Management Section */}
-            <div className="lg:w-1/2 flex flex-col lg:mx-4 justify-center bg-yellow-400 p-6 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:rotate-3">
+            <div className="lg:w-1/2 flex flex-col lg:mx-4 justify-center bg-yellow-300 p-6 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:rotate-3">
               <div className="text-white mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -540,12 +540,12 @@ const Services = () => {
                   <path d="m7.375 16.781 1.25-1.562L4.601 12l4.024-3.219-1.25-1.562-5 4a1 1 0 0 0 0 1.562l5 4zm9.25-9.562-1.25 1.562L19.399 12l-4.024 3.219 1.25 1.562 5-4a1 1 0 0 0 0-1.562l-5-4zm-1.649-4.003-4 18-1.953-.434 4-18z"></path>
                 </svg>
               </div>
-              <h3 className="text-2xl text-white font-bold">
+              <h3 className="text-2xl text-black font-bold">
                 Social Media Marketing{" "}
                 <span className="font-black">Marketing</span> (SMM) Budget
               </h3>
               <div>
-                <p className="my-3 text-lg text-black-500 font-medium">
+                <p className="my-3 text-lg text-black font-medium">
                   Instagram Growth (Followers, Likes, Views, Promotions): ₹2,000
                   - ₹50,000/month YouTube Growth (Subscribers, Views, Watch
                   Hours, Ads): ₹5,000 - ₹1,00,000/month Facebook Page Promotions

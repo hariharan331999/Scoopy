@@ -47,11 +47,11 @@ const Payservices = () => {
       <div>
         <NavBar />
       </div>
-      <div className="flex justify-center space-x-8 p-10 items-center mt-8 w-full bg-white py-4 lg:py-24 " >
+      <div className="flex flex-col lg:flex-row justify-center space-y-8 lg:space-y-0 lg:space-x-8 p-10 items-center mt-20 w-full bg-gray-400 py-4 lg:py-24">
         {plans.map((plan) => (
           <div
             key={plan.title}
-            className="bg-white rounded-2xl shadow-lg p-8 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+            className="bg-white rounded-2xl shadow-lg p-8 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl w-full max-w-sm"
           >
             <h2 className="text-2xl font-bold mb-2">{plan.title}</h2>
             <p className="text-lg text-gray-600 mb-4">Starting @ {plan.price}</p>
@@ -70,3 +70,4 @@ const Payservices = () => {
 };
 
 export default Payservices;
+

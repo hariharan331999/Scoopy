@@ -30,12 +30,12 @@ const Footer = () => {
 
             {/* 2nd block */}
             <div className="col-span-6 md:col-span-6 lg:col-span-1 ml-7 mx-auto">
-              <h6 className="text-black hover:text-yellow-500 text-xl font-bold mb-4">LINKS</h6>
+              <h6 className="text-black hover:text-white text-xl font-bold mb-4">LINKS</h6>
               <ul className="text-md">
                 <li className="mb-2">
                   <HashLink
                     to="#"
-                    className="text-black hover:text-yellow-500 hover:tracking-wider transition duration-250 ease-in-out"
+                    className="text-black hover:text-white hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     About
                   </HashLink>
@@ -43,7 +43,7 @@ const Footer = () => {
                 <li className="mb-2">
                   <HashLink
                     to="#"
-                    className="text-black hover:text-yellow-500 hover:tracking-wider transition duration-250 ease-in-out"
+                    className="text-black hover:text-white hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     Services
                   </HashLink>
@@ -51,7 +51,7 @@ const Footer = () => {
                 <li className="mb-2">
                   <HashLink
                     to="#"
-                    className="text-black hover:text-yellow-500 hover:tracking-wider transition duration-250 ease-in-out"
+                    className="text-black hover:text-white hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     Contact
                   </HashLink>
@@ -61,14 +61,14 @@ const Footer = () => {
 
             {/* 3rd block */}
             <div className="col-span-6 md:col-span-6 lg:col-span-4 mx-auto">
-              <h6 className="text-black hover:text-yellow-500 text-xl font-bold mb-4">
+              <h6 className="text-black hover:text-white text-xl font-bold mb-4">
                 OUR SERVICES
               </h6>
               <ul className="text-md">
                 <li className="mb-2">
                   <Link
                     to="#"
-                    className="text-black hover:text-yellow-500 hover:tracking-wider transition duration-250 ease-in-out"
+                    className="text-black hover:text-white hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     Web Development
                   </Link>
@@ -76,7 +76,7 @@ const Footer = () => {
                 <li className="mb-2">
                   <Link
                     to="#"
-                    className="text-black hover:text-yellow-500 hover:tracking-wider transition duration-250 ease-in-out"
+                    className="text-black hover:text-white hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     Mobile App Development
                   </Link>
@@ -84,7 +84,7 @@ const Footer = () => {
                 <li className="mb-2">
                   <Link
                     to="#"
-                    className="text-black hover:text-yellow-500 hover:tracking-wider transition duration-250 ease-in-out"
+                    className="text-black hover:text-white hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     Domain and Hosting
                   </Link>
@@ -92,7 +92,7 @@ const Footer = () => {
                 <li className="mb-2">
                   <Link
                     to="#"
-                    className="text-black hover:text-yellow-500 hover:tracking-wider transition duration-250 ease-in-out"
+                    className="text-black hover:text-white hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     General IT Consultations
                   </Link>
@@ -102,9 +102,9 @@ const Footer = () => {
 
             {/* 4th block */}
             <div className="col-span-12 text-center mx-auto lg:col-span-3 font-bold uppercase text-blue-900">
-              <div className="text-xl text-black hover:text-yellow-500 mb-6">Social Media Links.</div>
+              <div className="text-xl text-black hover:text-white mb-6">Social Media Links.</div>
 
-              <div className="text-md text-black hover:text-yellow-500 font-medium mb-6">
+              <div className="text-md text-black hover:text-white font-medium mb-6">
                 Follow us on social media.
               </div>
               <div className="mx-auto text-center mt-2">
