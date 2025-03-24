@@ -18,12 +18,12 @@ const Services = () => {
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   const extraServices = [
-    { title: "Search Engine Optimization (SEO)", description: "Improve your website’s ranking and visibility on Google.", img: SEO },
-    { title: "Social Media Marketing (SMM)", description: "Engage and grow your audience on platforms like Facebook, Instagram, LinkedIn, and more.", img: Social },
-    { title: "Content Marketing", description: "High-quality blogs, articles, and website content to attract and retain customers.", img: ContentMarketing },
-    { title: "Pay-Per-Click (PPC) Advertising", description: "Get instant leads and conversions through Google Ads and social media ads.", img:Payper  },
-    { title: "Website Development & Design ", description: "Create stunning, user-friendly websites that convert visitors into customers.", img: UXUI },
-    { title: "Branding & Graphic Design ", description: "Eye-catching designs that define your brand’s identity.", img:BRANDGRAphics },
+    { title: "Search Engine Optimization (SEO)", description: "Improve your website’s ranking \n and visibility on Google.", img: SEO },
+    { title: "Social Media Marketing (SMM)", description: "Engage and grow your audience on platforms \n like Facebook, Instagram, LinkedIn, and more.", img: Social },
+    { title: "Content Marketing", description: "High-quality blogs, articles, and website content \n to attract and retain customers.", img: ContentMarketing },
+    { title: "Pay-Per-Click (PPC) Advertising", description: "Get instant leads and conversions through \n Google Ads and social media ads.", img:Payper  },
+    { title: "Website Development & Design ", description: "Create stunning, user-friendly websites that convert  \n visitors into customers.", img: UXUI },
+    { title: "Branding & Graphic Design ", description: "Eye-catching designs that \n define your brand’s identity.", img:BRANDGRAphics },
   ];
 
   // Scroll handler
@@ -58,40 +58,83 @@ const Services = () => {
   let serviceContent = null;
   if (!selectedService) {
     serviceContent = (
-      <div className="services-wrapper">
-        
-      {/* Left Arrow */}
-      <button 
-        className={`scroll-arrow left ${!canScrollLeft && "disabled"}`} 
-        onClick={() => handleScroll(-300)}
-        disabled={!canScrollLeft}
-      >
-        ◀
-      </button>
+      <div className="py-10 p-5">
+  {/* Web View: Scrollable Row */}
+  <div className="hidden md:flex items-center justify-center gap-3 relative"> 
 
-      <div className="services-container" ref={scrollContainerRef}>
-        <div className="services-scroll">
-          {extraServices.map((service, index) => (
-            <div key={index} className="service-card">
-              
-              <h3 className="text-lg font-bold ">{service.title}</h3>
-              <img src={service.img} alt={service.title} className="service-img my-4" />
-              <p className="text-sm">{service.description}</p>
-            </div>
-          ))}
-        </div>
+    {/* Left Arrow */}
+    <button 
+      className={`p-2 rounded-full shadow-md bg-gray-100 hover:bg-yellow-500 hover:text-white transition duration-300 ${
+        !canScrollLeft ? "opacity-50 cursor-not-allowed" : ""
+      }`}
+      onClick={() => handleScroll(-300)}
+      disabled={!canScrollLeft}
+    >
+      ◀
+    </button>
+
+    {/* Scrollable container */}
+    <div 
+      className="flex overflow-x-auto scroll-smooth whitespace-nowrap w-full max-w-5x3 px-3 no-scrollbar"
+      ref={scrollContainerRef}
+    >
+      <div className="flex gap-7 min-w-max p-5">  
+        {extraServices.map((service, index) => (
+          <div 
+            key={index} 
+            className="flex flex-col items-center bg-white shadow-md rounded-lg p-3 min-w-[300px] md:min-w-[420px] lg:min-w-[340px] hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <h3 className="text-lg font-bold mb-2 text-center">{service.title}</h3>
+
+            {/* Image */}
+            <img 
+  src={service.img} 
+  alt={service.title} 
+  className="w-52 h-52 object-cover rounded-md mb-2"
+/>
+            {/* Description with larger width and wrapping */}
+            <p className="text-gray-600 text-xs whitespace-pre-line break-words leading-relaxed text-center">
+              {service.description}
+            </p>
+          </div>
+        ))}
       </div>
-
-      {/* Right Arrow */}
-      <button 
-        className={`scroll-arrow right ${!canScrollRight && "disabled"}`} 
-        onClick={() => handleScroll(300)}
-        disabled={!canScrollRight}
-      >
-        ▶
-      </button>
-
     </div>
+
+    {/* Right Arrow */}
+    <button 
+      className={`p-2 rounded-full shadow-md bg-gray-100 hover:bg-yellow-500 hover:text-white transition duration-300 ${
+        !canScrollRight ? "opacity-50 cursor-not-allowed" : ""
+      }`}
+      onClick={() => handleScroll(300)}
+      disabled={!canScrollRight}
+    >
+      ▶
+    </button>
+  </div>
+
+  {/* Mobile View: Column Layout */}
+  <div className="flex flex-col gap-3 md:hidden">
+    {extraServices.map((service, index) => (
+      <div 
+        key={index} 
+        className="flex flex-col items-center bg-white shadow-md rounded-lg p-3"
+      >
+        <h3 className="text-sm font-bold mb-2 text-center">{service.title}</h3>
+        <img 
+          src={service.img} 
+          alt={service.title} 
+          className="w-full h-28 object-contain rounded-md mb-2"
+        />
+        <p className="text-gray-600 text-xs whitespace-pre-line break-words leading-relaxed text-center">
+          {service.description}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
+
     );
   } else if (selectedService === "Digital marketing") {
     serviceContent = (
