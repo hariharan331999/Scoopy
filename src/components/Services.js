@@ -1,41 +1,97 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import img from "../images/DigitalMarketing1.svg";
 import img2 from "../images/DigitalMarketing2.svg";
 import img3 from "../images/DigitalMarketing3.svg";
 import img4 from "../images/DigitalMarketing4.svg";
+import SEO from "../images/SEO-Optimise.jpg";
+import Social from "../images/SocialMarketing.jpg";
+import ContentMarketing from "../images/ContentMarketing.svg";
+import BRANDGRAphics from "../images/BRANDGRAphics.svg";
+import UXUI from "../images/UX-UI.svg";
+import Payper from "../images/Payperclick.svg";
 import { useSelectedService } from "./SelecedServiceProvider";
-
+import "./Services.css";
 const Services = () => {
   const { selectedService } = useSelectedService(); // Get the selectedService from context
+  const scrollContainerRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const extraServices = [
+    { title: "Search Engine Optimization (SEO)", description: "Improve your website’s ranking and visibility on Google.", img: SEO },
+    { title: "Social Media Marketing (SMM)", description: "Engage and grow your audience on platforms like Facebook, Instagram, LinkedIn, and more.", img: Social },
+    { title: "Content Marketing", description: "High-quality blogs, articles, and website content to attract and retain customers.", img: ContentMarketing },
+    { title: "Pay-Per-Click (PPC) Advertising", description: "Get instant leads and conversions through Google Ads and social media ads.", img:Payper  },
+    { title: "Website Development & Design ", description: "Create stunning, user-friendly websites that convert visitors into customers.", img: UXUI },
+    { title: "Branding & Graphic Design ", description: "Eye-catching designs that define your brand’s identity.", img:BRANDGRAphics },
+  ];
+
+  // Scroll handler
+  const handleScroll = (scrollOffset) => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: scrollOffset, behavior: "smooth" });
+    }
+  };
+
+  // Check if scrollable
+  const checkScroll = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      setCanScrollLeft(container.scrollLeft > 0);
+      setCanScrollRight(container.scrollLeft + container.clientWidth < container.scrollWidth);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener("scroll", checkScroll);
+      checkScroll();
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener("scroll", checkScroll);
+      }
+    };
+  }, [extraServices.length]);
 
   let serviceContent = null;
   if (!selectedService) {
     serviceContent = (
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="bg-white shadow-lg p-5 rounded-lg text-center">
-          <h2 className="text-xl font-bold">Digital Marketing</h2>
-          <p>
-            We provide top-notch digital marketing strategies to grow your
-            business.
-          </p>
-        </div>
-        <div className="bg-white shadow-lg p-5 rounded-lg text-center">
-          <h2 className="text-xl font-bold">SEO</h2>
-          <p>
-            Optimize your website and improve your rankings on search engines.
-          </p>
-        </div>
-        <div className="bg-white shadow-lg p-5 rounded-lg text-center">
-          <h2 className="text-xl font-bold">Content Marketing</h2>
-          <p>
-            Engage your audience with high-quality content and storytelling.
-          </p>
-        </div>
-        <div className="bg-white shadow-lg p-5 rounded-lg text-center">
-          <h2 className="text-xl font-bold">Strategy & Branding</h2>
-          <p>Develop a strong brand identity and market positioning.</p>
+      <div className="services-wrapper">
+        
+      {/* Left Arrow */}
+      <button 
+        className={`scroll-arrow left ${!canScrollLeft && "disabled"}`} 
+        onClick={() => handleScroll(-300)}
+        disabled={!canScrollLeft}
+      >
+        ◀
+      </button>
+
+      <div className="services-container" ref={scrollContainerRef}>
+        <div className="services-scroll">
+          {extraServices.map((service, index) => (
+            <div key={index} className="service-card">
+              
+              <h3 className="text-lg font-bold ">{service.title}</h3>
+              <img src={service.img} alt={service.title} className="service-img my-4" />
+              <p className="text-sm">{service.description}</p>
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* Right Arrow */}
+      <button 
+        className={`scroll-arrow right ${!canScrollRight && "disabled"}`} 
+        onClick={() => handleScroll(300)}
+        disabled={!canScrollRight}
+      >
+        ▶
+      </button>
+
+    </div>
     );
   } else if (selectedService === "Digital marketing") {
     serviceContent = (

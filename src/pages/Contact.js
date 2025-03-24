@@ -166,7 +166,8 @@ const Contact = () => {
                                 </div>
                                 <div className="flex flex-col">
                                 <h2 className="text-2xl text-black">Office Address</h2>
-                                    <p className="text-black-400">Ilo Awela, Ota, Ogun State</p>
+                                    <p className="text-black-400">403, Cross Cut Road, Gandhipuram, Coimbatore
+                                    </p>
                                 </div>
                             </div>
                             
@@ -177,11 +178,16 @@ const Contact = () => {
 
                                 <div className="flex flex-col">
                                     <h2 className="text-2xl text-black">Call Us</h2>
-                                    <p className="text-black-400">Tel: 08055384406</p>
+                                    <p className="text-black-400">+91 99942 41776
+                                    </p>
+                                    <p className="text-black-400">+91 90035 76179
+                                    </p>
+                                    <p className="text-black-400">+91 9894828934
+                                    </p>
                                 
                                     <div className='mt-5'>
                                         <h2 className="text-2xl text-black">Send an E-mail</h2>
-                                        <p className="text-black-400">info@mld.ng</p>
+                                        <p className="text-black-400">scoopydigital@gmail.com </p>
                                     </div>
                             
                                 </div>

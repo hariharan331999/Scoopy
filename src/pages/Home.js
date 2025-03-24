@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import Intro from '../components/Intro';
 import Portfolio from '../components/Portfolio';
 import Services from '../components/Services';
+import WhyChooseUs from '../components/WhyChoose';
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
         <>
             <Hero />
             <Intro />
+            <WhyChooseUs/>
             <Services />
             {/* <Portfolio /> */}
             
