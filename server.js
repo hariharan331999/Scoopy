@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const app = express(); // Define app BEFORE using it
+const app = express();
 
 // Middleware
 app.use(cors());
@@ -12,7 +12,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+const MONGO_URI = process.env.MONGO_URI || "your-fallback-uri";
+mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log('MongoDB Connection Error:', err));
 
@@ -26,12 +27,13 @@ const ContactSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now }
 });
 
-const Contact = mongoose.model('Contact', ContactSchema);
+// Explicitly specify 'contacts' collection inside 'test' database
+const Contact = mongoose.model('Contact', ContactSchema, 'contacts');
 
-// API Endpoint (AFTER defining app)
+// API Endpoint
 app.post('/api/contact', async (req, res) => {
     try {
-        console.log("Received data:", req.body); // Debugging
+        console.log("Received data:", req.body);
 
         const { first_name, last_name, email, phone_number, message } = req.body;
 
