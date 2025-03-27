@@ -13,34 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // MongoDB Connection
 const MONGO_URI = process.env.MONGO_URI || "your-fallback-uri";
-
-const options = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000,   // 5 seconds timeout for DB server selection
-    socketTimeoutMS: 45000,           // 45 seconds socket inactivity timeout
-    keepAlive: true,                  // Keep connection alive
-    maxPoolSize: 10                    // Use connection pooling
-};
-
-// Cache the connection
-let isConnected = false;
-
-const connectDB = async () => {
-    if (isConnected) {
-        console.log('✅ Using existing MongoDB connection');
-        return;
-    }
-
-    try {
-        await mongoose.connect(MONGO_URI, options);
-        isConnected = true;
-        console.log('✅ MongoDB Connected');
-    } catch (error) {
-        console.error('❌ MongoDB Connection Error:', error);
-    }
-};
-
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log('MongoDB Connection Error:', err));
@@ -88,4 +60,3 @@ app.post('/api/contact', async (req, res) => {
 // Start the Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-connectDB();
