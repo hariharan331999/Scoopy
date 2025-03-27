@@ -13,7 +13,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // MongoDB Connection
 const MONGO_URI = process.env.MONGO_URI || "your-fallback-uri";
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+
+mongoose.connect(MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000,  // 5 seconds timeout for DB server selection
+    socketTimeoutMS: 45000,          // 45 seconds socket inactivity timeout
+    keepAlive: true,                  // Keep connection alive
+    maxPoolSize: 10                   // Use connection pooling
+})
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log('MongoDB Connection Error:', err));
 
@@ -49,7 +57,7 @@ app.post('/api/contact', async (req, res) => {
             message: message
         });
 
-        await newContact.save();
+        await newContact.save();  // Ensure save is awaited
         res.status(201).json({ message: 'Message sent successfully!' });
     } catch (error) {
         console.error("Error saving contact:", error);
