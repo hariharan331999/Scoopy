@@ -33,32 +33,34 @@ const Contact = () => {
         document.getElementById('submitBtn').innerHTML = 'Loading...';
     
         const fData = {
-            firstName: firstName,       // ✅ Match MongoDB schema
-            lastName: lastName,
+            first_name: firstName,
+            last_name: lastName,
             email: email,
-            phone: phone,
+            phone_number: phone,
             message: message
         };
     
         axios.post(process.env.REACT_APP_CONTACT_API, fData)
-            .then((response) => {
-                document.getElementById('submitBtn').disabled = false;
-                document.getElementById('submitBtn').innerHTML = 'Send Message';
-                clearInput();
-                Notiflix.Report.success('Success', response.data.message, 'Okay');
-            })
-            .catch((error) => {
-                document.getElementById('submitBtn').disabled = false;
-                document.getElementById('submitBtn').innerHTML = 'Send Message';
-    
-                if (error.response) {
-                    Notiflix.Report.failure('Error', error.response.data.error, 'Okay');
+        .then((response) => {
+            document.getElementById('submitBtn').disabled = false;
+            document.getElementById('submitBtn').innerHTML = 'Send Message';
+            clearInput();
+            Notiflix.Report.success('Success', response.data.message, 'Okay');
+        })
+        .catch((error) => {
+            document.getElementById('submitBtn').disabled = false;
+            document.getElementById('submitBtn').innerHTML = 'Send Message';
+            
+            if (error.response) {
+                if (error.response.status === 500) {
+                    Notiflix.Report.failure('An error occurred', error.response.data.message, 'Okay');
                 }
-            });
+                if (error.response.data.errors !== null) {
+                    setErrors(error.response.data.errors);
+                }
+            }
+        });
     };
-    
-    
-    
     
     return (
         <>
