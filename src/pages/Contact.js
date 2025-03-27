@@ -41,26 +41,28 @@ const Contact = () => {
         };
     
         axios.post(process.env.REACT_APP_CONTACT_API, fData)
-        .then((response) => {
-            document.getElementById('submitBtn').disabled = false;
-            document.getElementById('submitBtn').innerHTML = 'Send Message';
-            clearInput();
-            Notiflix.Report.success('Success', response.data.message, 'Okay');
-        })
-        .catch((error) => {
-            document.getElementById('submitBtn').disabled = false;
-            document.getElementById('submitBtn').innerHTML = 'Send Message';
-            
-            if (error.response) {
-                if (error.response.status === 500) {
-                    Notiflix.Report.failure('An error occurred', error.response.data.message, 'Okay');
+            .then((response) => {
+                document.getElementById('submitBtn').disabled = false;
+                document.getElementById('submitBtn').innerHTML = 'Send Message';
+                clearInput();
+                Notiflix.Report.success('Success', response.data.message, 'Okay');
+            })
+            .catch((error) => {
+                document.getElementById('submitBtn').disabled = false;
+                document.getElementById('submitBtn').innerHTML = 'Send Message';
+    
+                if (error.response) {
+                    if (error.response.status === 500) {
+                        Notiflix.Report.failure('An error occurred', error.response.data.message, 'Okay');
+                    }
+                    if (error.response.data.errors !== null) {
+                        setErrors(error.response.data.errors);
+                    }
                 }
-                if (error.response.data.errors !== null) {
-                    setErrors(error.response.data.errors);
-                }
-            }
-        });
+            });
     };
+    
+    
     
     return (
         <>
