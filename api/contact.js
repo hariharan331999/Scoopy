@@ -1,5 +1,21 @@
 import mongoose from 'mongoose';
 
+// MongoDB Connection (Singleton)
+const connectDB = async () => {
+    if (mongoose.connection.readyState >= 1) {
+        console.log('MongoDB already connected');
+        return;
+    }
+    
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log('MongoDB Connected');
+    } catch (error) {
+        console.error('MongoDB Connection Error:', error);
+        throw new Error('MongoDB connection failed');
+    }
+};
+
 // MongoDB Schema
 const ContactSchema = new mongoose.Schema({
     firstName: String,
@@ -30,16 +46,11 @@ export default async function handler(req, res) {
         }
 
         try {
-            // ✅ Use a stable MongoDB connection
-            if (mongoose.connection.readyState !== 1) {
-                console.log('Connecting to MongoDB...');
-                await mongoose.connect(process.env.MONGO_URI);
-                console.log('MongoDB Connected');
-            }
+            // ✅ Use Singleton MongoDB Connection
+            await connectDB();
 
-            // ✅ Use correct schema field names
             const newContact = new Contact({
-                firstName: first_name,    // Correct field names
+                firstName: first_name,
                 lastName: last_name,
                 email: email,
                 phone: phone_number,
@@ -50,8 +61,8 @@ export default async function handler(req, res) {
             res.status(201).json({ message: 'Message saved successfully!' });
 
         } catch (error) {
-            console.error("Error:", error);
-            res.status(500).json({ error: 'Failed to save message' });
+            console.error("Error saving contact:", error);
+            res.status(500).json({ error: 'Failed to save message', details: error.message });
         }
     } else {
         res.status(405).json({ message: 'Method Not Allowed' });
