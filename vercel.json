@@ -2,13 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "functions": {
-        "api/contact.js": {
-          "runtime": "@vercel/node"
-        }
-      }
+      "src": "api/contact.js",
+      "use": "@vercel/node"
     }
-    
   ],
   "routes": [
     {

@@ -39,9 +39,9 @@ export default async function handler(req, res) {
     }
 
     if (req.method === 'POST') {
-        const { first_name, last_name, email, phone_number, message } = req.body;
+        const { firstName, lastName, email, phone, message } = req.body;
 
-        if (!first_name || !last_name || !email || !phone_number || !message) {
+        if (!firstName || !lastName || !email || !phone || !message) {
             return res.status(400).json({ error: "All fields are required" });
         }
 
@@ -50,10 +50,10 @@ export default async function handler(req, res) {
             await connectDB();
 
             const newContact = new Contact({
-                firstName: first_name,
-                lastName: last_name,
+                firstName: firstName,
+                lastName: lastName,
                 email: email,
-                phone: phone_number,
+                phone: phone,
                 message: message
             });
 
