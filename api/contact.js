@@ -1,35 +1,36 @@
 import mongoose from 'mongoose';
 
-// MongoDB Connection (Singleton)
+// ✅ MongoDB Connection Singleton
 const connectDB = async () => {
     if (mongoose.connection.readyState >= 1) {
-        console.log('MongoDB already connected');
+        console.log('✅ MongoDB already connected');
         return;
     }
-    
+
     try {
-        await mongoose.connect(process.env.MONGO_URI);
-        console.log('MongoDB Connected');
+        await mongoose.connect(process.env.MONGO_URI, {
+            serverSelectionTimeoutMS: 5000,    // Timeout after 5 seconds
+        });
+        console.log('✅ MongoDB Connected');
     } catch (error) {
-        console.error('MongoDB Connection Error:', error);
+        console.error('❌ MongoDB Connection Error:', error.message);
         throw new Error('MongoDB connection failed');
     }
 };
 
-// MongoDB Schema
+// ✅ MongoDB Schema
 const ContactSchema = new mongoose.Schema({
-    firstName: String,
-    lastName: String,
-    email: String,
-    phone: String,
-    message: String,
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    email: { type: String, required: true },
+    phone: { type: String, required: true },
+    message: { type: String, required: true },
     createdAt: { type: Date, default: Date.now }
 });
 
 const Contact = mongoose.models.Contact || mongoose.model('Contact', ContactSchema);
 
 export default async function handler(req, res) {
-    // ✅ CORS Headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
@@ -50,18 +51,18 @@ export default async function handler(req, res) {
             await connectDB();
 
             const newContact = new Contact({
-                firstName: firstName,
-                lastName: lastName,
-                email: email,
-                phone: phone,
-                message: message
+                firstName,
+                lastName,
+                email,
+                phone,
+                message
             });
 
             await newContact.save();
             res.status(201).json({ message: 'Message saved successfully!' });
 
         } catch (error) {
-            console.error("Error saving contact:", error);
+            console.error("❌ Error saving contact:", error);
             res.status(500).json({ error: 'Failed to save message', details: error.message });
         }
     } else {
