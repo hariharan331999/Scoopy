@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
+// MongoDB Schema
 const ContactSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
@@ -12,13 +13,12 @@ const ContactSchema = new mongoose.Schema({
 const Contact = mongoose.models.Contact || mongoose.model('Contact', ContactSchema);
 
 export default async function handler(req, res) {
-    // ✅ Add CORS Headers
+    // ✅ CORS Headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
     if (req.method === 'OPTIONS') {
-        // Preflight request handling
         return res.status(200).end();
     }
 
@@ -30,15 +30,16 @@ export default async function handler(req, res) {
         }
 
         try {
-            if (!mongoose.connection.readyState) {
-                await mongoose.connect(process.env.MONGO_URI, {
-                    useNewUrlParser: true,
-                    useUnifiedTopology: true,
-                });
+            // ✅ Use a stable MongoDB connection
+            if (mongoose.connection.readyState !== 1) {
+                console.log('Connecting to MongoDB...');
+                await mongoose.connect(process.env.MONGO_URI);
+                console.log('MongoDB Connected');
             }
 
+            // ✅ Use correct schema field names
             const newContact = new Contact({
-                firstName: first_name,
+                firstName: first_name,    // Correct field names
                 lastName: last_name,
                 email: email,
                 phone: phone_number,
