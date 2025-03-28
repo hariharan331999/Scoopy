@@ -25,3 +25,7 @@ app.get('/', (req, res) => {
 
 // Server Listener
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const app = require('./server');
+
+// Export the server handler for Vercel
+module.exports = app;
