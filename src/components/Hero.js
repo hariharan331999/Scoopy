@@ -6,7 +6,7 @@ import heroImg1 from "../images/digitmarket2.jpeg";
 import heroImg2 from "../images/digitmarket3.jpeg"; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import NavBar from "../components/Navbar/NavBar";
+import NavBar from "./Navbar/NavBar";
 
 // Sample items for the carousel
 const items = [
