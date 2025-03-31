@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- # React JS Startup and small business website template
 
 [![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=yourname&button_colour=FFDD00&font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/akugbeStephen)
@@ -27,3 +28,6 @@ To use this template:
 Feel free to edit and make changes. 
 
 You can also Fork the repo and clone to your local machine, make desired changes and enjoy. -->
+=======
+# Scoopy
+>>>>>>> 117b1e7166c35a5d5f3ac74d2a5d24a4def0f508
