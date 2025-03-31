@@ -33,29 +33,31 @@ const Contact = () => {
         document.getElementById('submitBtn').innerHTML = 'Loading...';
     
         const fData = {
-            first_name: firstName,
-            last_name: lastName,
+            firstName: firstName,    // ✅ Correct field names
+            lastName: lastName,
             email: email,
-            phone_number: phone,
+            phone: phone,
             message: message
         };
     
-        axios.post(process.env.REACT_APP_CONTACT_API, fData)
+        // Use the full API URL directly (not .env in this case)
+        axios.post('https://scoopy-backend-1.onrender.com/api/contact', fData)
         .then((response) => {
             document.getElementById('submitBtn').disabled = false;
             document.getElementById('submitBtn').innerHTML = 'Send Message';
+            
             clearInput();
             Notiflix.Report.success('Success', response.data.message, 'Okay');
         })
         .catch((error) => {
             document.getElementById('submitBtn').disabled = false;
             document.getElementById('submitBtn').innerHTML = 'Send Message';
-            
+    
             if (error.response) {
                 if (error.response.status === 500) {
-                    Notiflix.Report.failure('An error occurred', error.response.data.message, 'Okay');
+                    Notiflix.Report.failure('An error occurred', error.response.data.error, 'Okay');
                 }
-                if (error.response.data.errors !== null) {
+                if (error.response.data.errors) {
                     setErrors(error.response.data.errors);
                 }
             }
